@@ -1,0 +1,8 @@
+mediapipe
+opencv-python
+tensorflow
+scikit-learn
+matplotlib
+protobuf
+cryptography
+numpy
