@@ -36,6 +36,8 @@ def get_args():
 
     return args
 
+# Add a global flag to control landmark drawing
+SHOW_LANDMARKS = False
 
 def main():
     # 引数解析 #################################################################
@@ -130,7 +132,9 @@ def main():
                 # Draw visualizations
                 brect = calc_bounding_rect(debug_image, hand_landmarks)
                 debug_image = draw_bounding_rect(use_brect, debug_image, brect)
-                debug_image = draw_landmarks(debug_image, landmark_list)
+                # Draw landmarks only if SHOW_LANDMARKS is True
+                if SHOW_LANDMARKS:
+                    debug_image = draw_landmarks(debug_image, landmark_list)
                 
             # Process combined landmarks for classification
             combined_landmarks = combine_hand_landmarks(landmark_lists)
@@ -139,8 +143,6 @@ def main():
             # 相対座標・正規化座標への変換
             pre_processed_point_history_list = pre_process_point_history(
                 debug_image, point_history)
-            # 学習データ保存
-            logging_csv(number, mode, landmark_lists)
 
             # 描画
             debug_image = draw_info_text(
