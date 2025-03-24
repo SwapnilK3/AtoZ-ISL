@@ -6,3 +6,11 @@ matplotlib
 protobuf
 cryptography
 numpy
+googletrans==4.0.0-rc1
+Pillow
+pyttsx3
+gtts
+pygame
+google-generativeai
+tkinter
+python-dotenv

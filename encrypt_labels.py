@@ -30,11 +30,21 @@ V
 W
 X
 Y
-Z"""
+Z
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9"""
 
 f = Fernet(key)
 encrypted_labels = f.encrypt(labels.encode('utf-8'))
 
 # Save the encrypted labels to file
-with open('model/keypoint_classifier/keypoint_classifier_label.enc', 'wb') as file:
+with open('Model/keypoint_classifier_label.enc', 'wb') as file:
     file.write(encrypted_labels)
