@@ -1,0 +1,9 @@
+flask
+numpy
+pillow
+tensorflow
+cryptography
+opencv-python
+mediapipe
+cryptography
+eventlet

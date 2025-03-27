@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Home | Sign Language Translator{% endblock %}
+
+
+
+{% block content %}
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="animate-on-scroll">Breaking Communication Barriers</h1>
+                <p class="animate-on-scroll">Transform Indian Sign Language into text and speech in real-time, making
+                    communication accessible for everyone.</p>
+                <div class="hero-buttons animate-on-scroll">
+                    <a href="{{ url_for('demo') }}">
+                        <button id="demoBtn" class="primary-btn">
+                            <i class="fas fa-play-circle"></i> Try Live Demo
+                        </button>
+                    </a>
+                    <a href="{{ url_for('index') }}#how-it-works">
+                        <button class="secondary-btn">
+                            <i class="fas fa-info-circle"></i> Learn More
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image animate-on-scroll">
+                <div class="floating-badge">
+                    <span>AI-Powered</span>
+                </div>
+            </div>
+        </div>
+        <div class="wave-divider">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1"
+                    d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,117.3C672,107,768,117,864,144C960,171,1056,213,1152,213.3C1248,213,1344,171,1392,149.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                </path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Features</span>
+                <h2>Powerful Translation Capabilities</h2>
+                <p>Our technology combines computer vision and AI to deliver seamless sign language translation.</p>
+            </div>
+
+            <div class="feature-cards">
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-camera"></i>
+                    </div>
+                    <h3>Real-Time Detection</h3>
+                    <p>Advanced hand tracking and sign recognition powered by machine learning.</p>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Text Translation</h3>
+                    <p>Convert signs into text seamlessly with intelligent autocorrect support.</p>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-volume-up"></i>
+                    </div>
+                    <h3>Speech Output</h3>
+                    <p>Listen to natural speech in Hindi, Marathi, and English with realistic voices.</p>
+                </div>
+                <div class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Meeting Integration</h3>
+                    <p>Seamlessly integrate with Zoom or Google Meet for live communication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Process</span>
+                <h2>How It Works</h2>
+                <p>A simple three-step process that makes sign language accessible to everyone.</p>
+            </div>
+
+            <div class="steps-container">
+                <div class="steps">
+                    <div class="step animate-on-scroll">
+                        <div class="step-icon">
+                            <i class="fas fa-hand-paper"></i>
+                            <span class="step-number">1</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Sign Capture</h3>
+                            <p>Your camera captures sign language gestures with precise hand tracking.</p>
+                        </div>
+                    </div>
+
+                    <div class="connector animate-on-scroll"></div>
+
+                    <div class="step animate-on-scroll">
+                        <div class="step-icon">
+                            <i class="fas fa-brain"></i>
+                            <span class="step-number">2</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>AI Recognition</h3>
+                            <p>Our advanced AI recognizes signs and translates them into meaningful text.</p>
+                        </div>
+                    </div>
+
+                    <div class="connector animate-on-scroll"></div>
+
+                    <div class="step animate-on-scroll">
+                        <div class="step-icon">
+                            <i class="fas fa-comments"></i>
+                            <span class="step-number">3</span>
+                        </div>
+                        <div class="step-content">
+                            <h3>Communication</h3>
+                            <p>Text is displayed and can be converted to speech for immediate conversation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-video animate-on-scroll">
+                    <div class="video-container">
+                        <img src="{{ url_for('static', filename='images/demo.mp4') }}" alt="Demo Video" class="video-placeholder">
+                        <div class="play-button">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Preview / Roadmap -->
+    <section class="preview" id="roadmap">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Roadmap</span>
+                <h2>Technology Preview & Future Plans</h2>
+                <p>Our development journey from prototype to comprehensive solution.</p>
+            </div>
+
+            <div class="preview-container">
+                <div class="mockup animate-on-scroll">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <img src="{{ url_for('static', filename='images/image.png') }}" alt="App Interface" class="screen-content">
+                        </div>
+                        <div class="phone-details">
+                            <div class="phone-camera"></div>
+                            <div class="phone-speaker"></div>
+                            <div class="phone-button"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap animate-on-scroll">
+                    <div class="timeline">
+                        <div class="timeline-item current">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Current MVP</h3>
+                                <p>Hand tracking and text output with basic translation.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Q2 2025</h3>
+                                <p>Enhanced translation and multi-language text-to-speech.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Q3 2025</h3>
+                                <p>Meeting integration and Flutter mobile app launch.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h3>Q4 2025</h3>
+                                <p>Advanced NLP for context-aware translation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Experience the Future of Communication</h2>
+                <p>Break down barriers and connect through innovative technology.</p>
+                <a href="{{ url_for('demo') }}">
+                    <button id="ctaBtn" class="primary-btn">
+                        <i class="fas fa-rocket"></i> Launch Demo
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

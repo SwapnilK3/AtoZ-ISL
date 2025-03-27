@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+
+{% block title %}Demo | Sign Language Translator{% endblock %}
+
+{% block content %}
+<!-- Demo Section -->
+<section class="demo" id="demo">
+    <div class="container">
+        <div class="section-header">
+            <span class="badge">Demo</span>
+            <h2>Try the Sign Language Translator</h2>
+            <p>Experience real-time recognition and translation of Indian Sign Language gestures.</p>
+        </div>
+
+        <div class="mode-selector">
+            
+        
+        <div class="mode-info">
+            <label class="mode-switch">
+                <input type="checkbox" id="streamingMode">
+                <span class="mode-slider"></span>
+                <span class="mode-text">Real-time Streaming</span>
+            </label>
+        </div>
+        <div class="mode-info">
+            <i class="fas fa-info-circle"></i>
+            <span>Enable for continuous recognition, disable for single captures</span>
+        </div>
+    </div>
+            
+        
+
+        <div class="demo-container">
+            <div class="camera-feed">
+                <h3>Camera Feed</h3>
+                <div class="video-container">
+                    <video id="video" autoplay playsinline style="transform: scaleX(-1);"></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div id="loading-indicator" class="loading-indicator" style="display: none;">
+                        <div class="spinner"></div>
+                        <span>Processing...</span>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button id="startBtn" class="btn primary"><i class="fas fa-play"></i> Start Camera</button>
+                    <button id="captureBtn" class="btn secondary" disabled><i class="fas fa-camera"></i> Capture</button>
+                    <button id="stopBtn" class="btn danger" disabled><i class="fas fa-stop"></i> Stop Camera</button>
+                </div>
+            </div>
+
+            <div class="translation-output">
+                <h3>Translation Output</h3>
+                <div id="result" class="output-box">
+                    <p class="placeholder-text">Translation will appear here...</p>
+                </div>
+                <div class="result-history">
+                    <h4>Recent Detections</h4>
+                    <div class="history-container" id="history-container">
+                        <!-- History items will be added here -->
+                    </div>
+                </div>
+                <div class="result-footer">
+                    <div id="confidence" class="confidence-meter">
+                        <span>Confidence: </span>
+                        <div class="meter-bar">
+                            <div class="meter-fill" style="width: 0%"></div>
+                        </div>
+                        <span id="confidence-value">0%</span>
+                    </div>
+                    <div id="processing-time" class="processing-time">
+                        Processing time: <span>0 ms</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Debug section - can be removed in production -->
+        <div class="debug-section" style="margin-top: 20px; font-size: 12px; color: #666; display: none;">
+            <h4>Debug Info</h4>
+            <div id="debug-info"></div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+<script src="{{ url_for('static', filename='js/demo.js') }}"></script>
+{% endblock %}
